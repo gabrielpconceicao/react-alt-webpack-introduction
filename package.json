@@ -1,0 +1,26 @@
+{
+  "name": "webpack_react_introduction",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Conceição <gabriel.conceicao@findhit.com> Teresa Morais <teresa.morais@findhit.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "alt": "^0.17.9",
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "history": "^1.13.1",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-router": "^1.0.0",
+    "webpack": "^1.12.6",
+    "webpack-dev-middleware": "^1.2.0",
+    "webpack-dev-server": "^1.12.1",
+    "webpack-hot-middleware": "^2.5.0"
+  }
+}
