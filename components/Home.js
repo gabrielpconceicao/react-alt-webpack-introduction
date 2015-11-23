@@ -21,7 +21,8 @@ export default class Home extends React.Component {
 
   render() {
     return (
-    	<div>Found {this.state.repo.total_count } Repos
+    	<div>
+        <h4>Found {this.state.repo.total_count } Repos</h4>
     		<button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
     	</div>
     	);
