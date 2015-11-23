@@ -1,9 +1,9 @@
 import alt from '../plugins/alt'
 import React, { Component } from 'react'
 import SearchRepos from '../actions/SearchRepos'
-import Repo from '../stores/Repo'
+import RepoStore from '../stores/Repo'
 
-export default class Home extends React.Component {
+export default class Repo extends React.Component {
   constructor(props) {
     super( props )
     this.state = { repo: {
@@ -12,17 +12,18 @@ export default class Home extends React.Component {
   }
 
   static getStores() {
-	  return [Repo];
+	  return [RepoStore];
   }
 
   static getPropsFromStores() {
-    return Repo.getState();
+    return RepoStore.getState();
   }
 
   render() {
     return (
     	<div>
         <h4>Found {this.state.repo.total_count } Repos</h4>
+        	<input className="search" placeholder="Name of repo"></input>
     		<button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
     	</div>
     	);
@@ -33,18 +34,19 @@ export default class Home extends React.Component {
   }
 
   componentWillMount() {
-    Repo.listen(this.onChange.bind( this ) )
+    RepoStore.listen(this.onChange.bind( this ) )
   }
 
   componentWillUnmount() {
-    Repo.unlisten(this.onChange.bind( this ) )
+    RepoStore.unlisten(this.onChange.bind( this ) )
   }
 
   onChange() {
-    this.setState(Repo.getState())
+    this.setState(RepoStore.getState())
   }
 
   handleClick( arg ) {
-  	SearchRepos.get();
+  	var val = window.document.querySelector( '.search' ).value;
+  	SearchRepos.get( val );
   }
 }

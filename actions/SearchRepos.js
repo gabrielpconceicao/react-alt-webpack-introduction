@@ -5,11 +5,11 @@ export default class SearchRepos {
    // this.generateActions( 'findRepos' ) // ['South Lake Tahoe, 'California']
   }
 
-  get(){
+  get( val ){
   	$.ajax({
       url: 'https://api.github.com/search/repositories',
       dataType: 'json',
-      data: 'q=2',
+      data: 'q=' + val,
       cache: false,
       success: function(data) {
         this.actions.dataFound(data);

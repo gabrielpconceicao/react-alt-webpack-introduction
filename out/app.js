@@ -26241,11 +26241,11 @@
 
 	  _createClass(SearchRepos, [{
 	    key: 'get',
-	    value: function get() {
+	    value: function get(val) {
 	      $.ajax({
 	        url: 'https://api.github.com/search/repositories',
 	        dataType: 'json',
-	        data: 'q=2',
+	        data: 'q=' + val,
 	        cache: false,
 	        success: (function (data) {
 	          this.actions.dataFound(data);
@@ -35568,13 +35568,13 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var Home = (function (_React$Component) {
-	  _inherits(Home, _React$Component);
+	var Repo = (function (_React$Component) {
+	  _inherits(Repo, _React$Component);
 
-	  function Home(props) {
-	    _classCallCheck(this, Home);
+	  function Repo(props) {
+	    _classCallCheck(this, Repo);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Home).call(this, props));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Repo).call(this, props));
 
 	    _this.state = { repo: {
 	        total_count: undefined
@@ -35582,7 +35582,7 @@
 	    return _this;
 	  }
 
-	  _createClass(Home, [{
+	  _createClass(Repo, [{
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
@@ -35595,6 +35595,7 @@
 	          this.state.repo.total_count,
 	          ' Repos'
 	        ),
+	        _react2.default.createElement('input', { className: 'search', placeholder: 'Name of repo' }),
 	        _react2.default.createElement(
 	          'button',
 	          { className: 'btn btn-success', onClick: this.handleClick },
@@ -35625,7 +35626,8 @@
 	  }, {
 	    key: 'handleClick',
 	    value: function handleClick(arg) {
-	      _SearchRepos2.default.get();
+	      var val = window.document.querySelector('.search').value;
+	      _SearchRepos2.default.get(val);
 	    }
 	  }], [{
 	    key: 'getStores',
@@ -35639,10 +35641,10 @@
 	    }
 	  }]);
 
-	  return Home;
+	  return Repo;
 	})(_react2.default.Component);
 
-	exports.default = Home;
+	exports.default = Repo;
 
 /***/ }
 /******/ ]);
