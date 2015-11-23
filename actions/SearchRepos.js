@@ -2,7 +2,6 @@ import alt from '../plugins/alt'
 
 export default class SearchRepos {
   constructor() {
-   // this.generateActions( 'findRepos' ) // ['South Lake Tahoe, 'California']
   }
 
   get( val ){
