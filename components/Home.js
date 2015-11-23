@@ -1,3 +1,4 @@
+import alt from '../plugins/alt'
 import React, { Component } from 'react'
 import SearchRepos from '../actions/SearchRepos'
 import Repo from '../stores/Repo'
@@ -11,9 +12,17 @@ export default class Home extends React.Component {
     	);
   }
 
+  componentWillMount() {
+    Repo.listen(this.onChange.bind( this ) )
+  }
+  componentWillUnmount() {
+    Repo.unlisten(this.onChange.bind( this ) )
+  }
+  onChange() {
+    this.setState(Repo.getState())
+  }
+
   handleClick( arg ) {
-  	console.log( 'init' )
   	SearchRepos.get();
-  	//this.setState({data: data});
   }
 }
