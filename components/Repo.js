@@ -1,32 +1,50 @@
 import alt from '../plugins/alt'
 import React, { Component } from 'react'
 import { Router, Route, Link } from 'react-router'
-import SearchRepos from '../actions/SearchRepos'
+import SearchReposActions from '../actions/SearchRepos'
 import RepoStore from '../stores/Repo'
 
 export default class Repo extends React.Component {
   constructor(props) {
     super( props )
-    this.state = { repo: {
-      total_count: undefined,
-    } }
+
+    this.state = {
+    	repo: {
+    		items: [],
+    		total_count: undefined
+    	},
+    }
   }
 
   static getStores() {
-	  return [RepoStore];
+	  return [RepoStore]
   }
 
   static getPropsFromStores() {
-    return RepoStore.getState();
+    return RepoStore.getState()
   }
 
   render() {
+  	console.log( this.state.repo );
+
+	var repos = this.state.repo.items.map( function( repo ) {
+      return (
+        <li>{repo.name}
+        	<img src={repo.owner.avatar_url}></img>
+        </li>
+      )
+    })
+
     return (
     	<div>
         <h4>Found {this.state.repo.total_count } Repos</h4>
         	<input className="search" placeholder="Name of repo"></input>
     		<button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
-        <Link to='/'>Back</Link>
+    		<Link to='/'>Back</Link>
+
+    		 <ul className="results">
+    		 	 {repos}
+    		 </ul>
     	</div>
     	);
   }
@@ -44,11 +62,11 @@ export default class Repo extends React.Component {
   }
 
   onChange() {
-    this.setState(RepoStore.getState())
+    this.setState( RepoStore.getState() )
   }
 
   handleClick( arg ) {
-  	var val = window.document.querySelector( '.search' ).value;
-  	SearchRepos.get( val );
+  	var val = window.document.querySelector( '.search' ).value
+  	SearchReposActions.get( val )
   }
 }

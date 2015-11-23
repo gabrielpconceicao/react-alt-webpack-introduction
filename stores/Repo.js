@@ -1,9 +1,9 @@
 import alt from '../plugins/alt';
-import searchRepos from '../actions/SearchRepos'
+import searchReposActions from '../actions/SearchRepos'
 
 class Repo {
   constructor() {
-    this.bindAction( searchRepos.dataFound, this.onRepos )
+    this.bindAction( searchReposActions.dataFound, this.onRepos )
 
     this.state = {
       repo: []
