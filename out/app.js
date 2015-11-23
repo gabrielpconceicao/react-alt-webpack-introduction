@@ -24582,7 +24582,7 @@
 	        ' Repos',
 	        _react2.default.createElement(
 	          'button',
-	          { onClick: this.handleClick },
+	          { className: 'btn btn-success', onClick: this.handleClick },
 	          'Find repos'
 	        )
 	      );

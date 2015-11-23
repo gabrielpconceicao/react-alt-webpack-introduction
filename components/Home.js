@@ -22,7 +22,7 @@ export default class Home extends React.Component {
   render() {
     return (
     	<div>Found {this.state.repo.total_count } Repos
-    		<button onClick={this.handleClick}>Find repos</button>
+    		<button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
     	</div>
     	);
   }
