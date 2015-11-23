@@ -26234,8 +26234,6 @@
 
 	var SearchRepos = (function () {
 	  function SearchRepos() {
-	    // this.generateActions( 'findRepos' ) // ['South Lake Tahoe, 'California']
-
 	    _classCallCheck(this, SearchRepos);
 	  }
 
@@ -35590,6 +35588,14 @@
 	  _createClass(Repo, [{
 	    key: 'render',
 	    value: function render() {
+	      /*
+	      	@teresamorais can you add some style or data? :)
+	      	you can see all data with this line:
+	      		console.log( this.state.repo )
+	      		try and see!
+	      */
+
+	      // All repos
 	      var repos = this.state.repo.items.map(function (repo) {
 	        return _react2.default.createElement(
 	          'li',
@@ -35599,17 +35605,24 @@
 	            null,
 	            ' Repo name '
 	          ),
-	          repo.name,
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            repo.name
+	          ),
 	          _react2.default.createElement(
 	            'h4',
 	            null,
 	            'Created by '
 	          ),
-	          ' ',
-	          _react2.default.createElement('img', { src: repo.owner.avatar_url })
+	          _react2.default.createElement('img', { style: {
+	              width: '100px',
+	              heigth: '100px'
+	            }, src: repo.owner.avatar_url })
 	        );
 	      });
 
+	      // Container of repos
 	      return _react2.default.createElement(
 	        'div',
 	        null,

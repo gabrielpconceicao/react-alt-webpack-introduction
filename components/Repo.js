@@ -25,15 +25,29 @@ export default class Repo extends React.Component {
   }
 
   render() {
+  	/*
+  		@teresamorais can you add some style or data? :)
+  		you can see all data with this line:
+  			console.log( this.state.repo )
+
+  		try and see!
+	*/
+
+	// All repos
 	var repos = this.state.repo.items.map( function( repo ) {
       return (
         <li>
-        	<h3> Repo name </h3>{repo.name}
-        	<h4>Created by </h4> <img src={repo.owner.avatar_url}></img>
+        	<h3> Repo name </h3><h4>{repo.name}</h4>
+        	<h4>Created by </h4> 
+        		<img style={{
+	        		width: '100px',
+	        		heigth: '100px'
+	        	}} src={repo.owner.avatar_url}></img>
         </li>
       )
     })
 
+	// Container of repos
     return (
     	<div>
         <h4>Found {this.state.repo.total_count } Repos</h4>
