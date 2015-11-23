@@ -1,12 +1,28 @@
-const gitApi = 'https://api.github.com/';
-//import Repo from '../stores/Repo';
+import alt from '../plugins/alt'
 
-import alt from '../plugins/alt';
+export default class SearchRepos {
+  constructor() {
+   // this.generateActions( 'findRepos' ) // ['South Lake Tahoe, 'California']
+  }
 
-class SearchRepos {
-  findRepos(id, text) {
-    return { id, text }
+  get(){
+  	$.ajax({
+      url: 'https://api.github.com/search/repositories',
+      dataType: 'json',
+      data: 'q=2',
+      cache: false,
+      success: function(data) {
+        this.actions.dataFound(data);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  }
+
+  dataFound( data ){
+  	 this.dispatch( data )
   }
 }
 
-export default alt.createActions(SearchRepos);
+export default alt.createActions( SearchRepos )

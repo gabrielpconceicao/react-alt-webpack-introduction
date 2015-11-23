@@ -1,22 +1,16 @@
 import alt from '../plugins/alt';
-
-// actions
-import SearchRepos from '../actions/SearchRepos'
+import searchRepos from '../actions/SearchRepos'
 
 class Repo {
   constructor() {
-    this.bindListeners({
-      updateRepos: SearchRepos.findRepos
-    });
-
-    this.state = {
-      repos: []
-    };
+    this.bindAction( searchRepos.dataFound, this.onRepos )
   }
 
-  updateRepos( repos ) {
-    this.setState({ repos: this.state.todos.concat( repos ) });
+  onRepos( obj ) {
+    console.log( obj );
+    // setState??
+    //this.setState({ repo: this.state.repo.concat( obj ) });
   }
 }
 
-export default alt.createStore( Repo, 'Repo');
+export default alt.createStore( Repo )

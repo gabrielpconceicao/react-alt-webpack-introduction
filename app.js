@@ -1,15 +1,13 @@
 import React, { PropTypes, Component } from 'react';
 import { Router, Route } from 'react-router';
-import Home from './pages/Home';
-import Test from './pages/Test';
+import Home from './components/Home';
 
-export default class App extends Component {
-	//static propTypes = {};
+export default class App extends React.Component {
 	render(){
 		return (
 			<Router>
 				<Route path="/" component={Home}></Route>
-				<Route path="/test" component={Test}></Route>
+				
 			</Router>
 		);
 	}

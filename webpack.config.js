@@ -8,7 +8,7 @@ module.exports = {
   ],
 
   output: {
-    path: __dirname + 'out',
+    path: __dirname + '/out',
     filename: 'app.js',
     publicPath: '/'
   },
@@ -22,5 +22,12 @@ module.exports = {
       }
       //include: path.join(__dirname, 'scripts')
     }]
-  }
+  },
+
+   plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ]
 };
