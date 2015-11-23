@@ -4,10 +4,20 @@ import SearchRepos from '../actions/SearchRepos'
 import Repo from '../stores/Repo'
 
 export default class Home extends React.Component {
+
+  static getStores() {
+	  return [Repo];
+  }
+
+  static getPropsFromStores() {
+    return Repo.getState();
+  }
+
   render() {
     return (
-    	<div>Hello
+    	<div>Hello {this.props.repo}
     		<button onClick={this.handleClick}>Find repos</button>
+    	}
     	</div>
     	);
   }

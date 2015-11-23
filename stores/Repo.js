@@ -4,12 +4,14 @@ import searchRepos from '../actions/SearchRepos'
 class Repo {
   constructor() {
     this.bindAction( searchRepos.dataFound, this.onRepos )
+
+    this.state = {
+      repo: []
+    }
   }
 
   onRepos( obj ) {
-    console.log( obj );
-    // setState??
-    //this.setState({ repo: this.state.repo.concat( obj ) });
+    this.setState({ repo: obj});
   }
 }
 
