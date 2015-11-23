@@ -16,7 +16,7 @@ export default class Home extends React.Component {
         <Link to='repo'> Find repos </Link>
         <Link to='user'> Find users </Link>
     	</div>
-    	);
+    );
   }
 
   shouldComponentUpdate ( nextProps, nextState ) {
