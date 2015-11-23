@@ -4,12 +4,12 @@ import Home from './components/Home';
 import Repo from './components/Repo'
 
 export default class App extends React.Component {
-	render(){
-		return (
-			<Router>
-				<Route path="/" component={Home}></Route>
-				<Route path="/repo" component={Repo}></Route>
-			</Router>
-		);
-	}
+    render(){
+        return (
+            <Router>
+                <Route path="/" component={Home}></Route>
+                <Route path="/repo" component={Repo}></Route>
+            </Router>
+        );
+    }
 }

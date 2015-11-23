@@ -9,15 +9,15 @@ export default class Repo extends React.Component {
     super( props )
 
     this.state = {
-    	repo: {
-    		items: [],
-    		total_count: undefined
-    	},
+        repo: {
+            items: [],
+            total_count: undefined
+        },
     }
   }
 
   static getStores() {
-	  return [RepoStore]
+      return [RepoStore]
   }
 
   static getPropsFromStores() {
@@ -25,41 +25,41 @@ export default class Repo extends React.Component {
   }
 
   render() {
-  	/*
-  		@teresamorais can you add some style or data? :)
-  		you can see all data with this line:
-  			console.log( this.state.repo )
+    /*
+        @teresamorais can you add some style or data? :)
+        you can see all data with this line:
+            console.log( this.state.repo )
 
-  		try and see!
-	*/
+        try and see!
+    */
 
-	// All repos
-	var repos = this.state.repo.items.map( function( repo ) {
+    // All repos
+    var repos = this.state.repo.items.map( function( repo ) {
       return (
         <li>
-        	<h3> Repo name </h3><h4>{repo.name}</h4>
-        	<h4>Created by </h4> 
-        		<img style={{
-	        		width: '100px',
-	        		heigth: '100px'
-	        	}} src={repo.owner.avatar_url}></img>
+            <h3> Repo name </h3><h4>{repo.name}</h4>
+            <h4>Created by </h4> 
+                <img style={{
+                    width: '100px',
+                    heigth: '100px'
+                }} src={repo.owner.avatar_url}></img>
         </li>
       )
     })
 
-	// Container of repos
+    // Container of repos
     return (
-    	<div>
+        <div>
         <h4>Found {this.state.repo.total_count } Repos</h4>
-        	<input className="search" placeholder="Name of repo"></input>
-    		<button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
-    		<Link to='/'>Back</Link>
+            <input className="search" placeholder="Name of repo"></input>
+            <button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
+            <Link to='/'>Back</Link>
 
-    		 <ul className="results">
-    		 	 {repos}
-    		 </ul>
-    	</div>
-    	)
+             <ul className="results">
+                 {repos}
+             </ul>
+        </div>
+        )
   }
 
   shouldComponentUpdate ( nextProps, nextState ) {
@@ -79,7 +79,7 @@ export default class Repo extends React.Component {
   }
 
   handleClick( arg ) {
-  	var val = window.document.querySelector( '.search' ).value
-  	SearchReposActions.get( val )
+    var val = window.document.querySelector( '.search' ).value
+    SearchReposActions.get( val )
   }
 }
