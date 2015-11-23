@@ -35590,13 +35590,22 @@
 	  _createClass(Repo, [{
 	    key: 'render',
 	    value: function render() {
-	      console.log(this.state.repo);
-
 	      var repos = this.state.repo.items.map(function (repo) {
 	        return _react2.default.createElement(
 	          'li',
 	          null,
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            ' Repo name '
+	          ),
 	          repo.name,
+	          _react2.default.createElement(
+	            'h4',
+	            null,
+	            'Created by '
+	          ),
+	          ' ',
 	          _react2.default.createElement('img', { src: repo.owner.avatar_url })
 	        );
 	      });

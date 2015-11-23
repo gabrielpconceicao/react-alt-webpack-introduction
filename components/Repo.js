@@ -25,12 +25,11 @@ export default class Repo extends React.Component {
   }
 
   render() {
-  	console.log( this.state.repo );
-
 	var repos = this.state.repo.items.map( function( repo ) {
       return (
-        <li>{repo.name}
-        	<img src={repo.owner.avatar_url}></img>
+        <li>
+        	<h3> Repo name </h3>{repo.name}
+        	<h4>Created by </h4> <img src={repo.owner.avatar_url}></img>
         </li>
       )
     })
@@ -46,7 +45,7 @@ export default class Repo extends React.Component {
     		 	 {repos}
     		 </ul>
     	</div>
-    	);
+    	)
   }
 
   shouldComponentUpdate ( nextProps, nextState ) {
