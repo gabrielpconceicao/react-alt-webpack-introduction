@@ -6,20 +6,20 @@ import RepoStore from '../stores/Repo'
 import RepoComponent from './Repo'
 
 export default class Home extends React.Component {
-  constructor(props) {
-    super( props )
-  }
+    constructor(props) {
+        super( props )
+    }
 
-  render() {
-    return (
-    	<div>
-        <Link to='repo'> Find repos </Link>
-        <Link to='user'> Find users </Link>
-    	</div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Link to='repo'> Find repos </Link>
+                <Link to='user'> Find users </Link>
+            </div>
+        );
+    }
 
-  shouldComponentUpdate ( nextProps, nextState ) {
-    return false
-  }
+    shouldComponentUpdate ( nextProps, nextState ) {
+        return false
+    }
 }
