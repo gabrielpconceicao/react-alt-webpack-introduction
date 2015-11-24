@@ -1,6 +1,6 @@
 # react-alt-webpack-introduction
-react-alt-webpack-introduction
 
+Find for repos or users on github.
 
 <b>Commands</b><br>
 <ul>
