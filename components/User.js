@@ -21,14 +21,21 @@ export default class User extends React.Component {
         var users = this.state.user.items.map( function( user, id ) {
             return (
                 <li key={id} style={{
+                    minHeight: '120px',
                     borderBottom: '1px solid #ddd',
-                    paddingBottom: '10px'
+                    padding: '10px 0'
                 }}>
-                    <a href={user.html_url} target="_blank">{user.login}</a>
                     <img style={{
                         width: '100px',
-                        height: '100px'
+                        height: '100px',
+                        float: 'left',
+                        marginRight: '10px'
                     }} src={user.avatar_url} />
+                    <h4 style={{
+                        marginTop: '0'
+                    }}>
+                        <a href={user.html_url} target="_blank">{user.login}</a>
+                    </h4>
                 </li>
             )
         })
@@ -45,7 +52,12 @@ export default class User extends React.Component {
                     </span>
                 </div>
                 <div>
-                    <h4>{ this.state.user.total_count ? this.state.user.total_count + ' results': '' }</h4>
+                    <h4 style={{
+                        textAlign: 'center',
+                        margin: '20px 0'
+                    }}>
+                        { this.state.user.total_count ? this.state.user.total_count + ' results': '' }
+                    </h4>
                     <ul className="results" style={{
                         padding: '0',
                         listStyle: 'none',

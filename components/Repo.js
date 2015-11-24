@@ -29,15 +29,27 @@ export default class Repo extends React.Component {
         var repos = this.state.repo.items.map( function( repo, id ) {
             return (
                 <li key={id} style={{
+                    minHeight: '120px',
                     borderBottom: '1px solid #ddd',
-                    paddingBottom: '10px'
+                    padding: '10px 0'
                 }}>
-                    <h5>Repo name: {repo.name}</h5>
-                    <h6>Created by:</h6> 
                     <img style={{
                         width: '100px',
-                        height: '100px'
+                        height: '100px',
+                        float: 'left',
+                        marginRight: '10px'
                     }} src={repo.owner.avatar_url} />
+                    <h4 style={{
+                        marginTop: '0'
+                    }}>
+                        <a href={repo.html_url} target="_blank">{repo.name}</a>
+                    </h4>
+                    <h5>Created by: <a href={repo.owner.html_url} target="_blank">{repo.owner.login}</a></h5> 
+                    <p style={{
+                        fontWeight: '200'
+                    }}>
+                        {repo.description}
+                    </p>
                 </li>
             )
         })
@@ -54,7 +66,12 @@ export default class Repo extends React.Component {
                     </span>
                 </div>
                 <div>
-                    <h4>{ this.state.repo.total_count ? this.state.repo.total_count + ' results': '' }</h4>
+                    <h4 style={{
+                        textAlign: 'center',
+                        margin: '20px 0'
+                    }}>
+                        { this.state.repo.total_count ? this.state.repo.total_count + ' results': '' }
+                    </h4>
                     <ul className="results" style={{
                         padding: '0',
                         listStyle: 'none',
