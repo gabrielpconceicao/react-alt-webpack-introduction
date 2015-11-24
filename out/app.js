@@ -19680,11 +19680,11 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Repo = __webpack_require__(227);
+	var _Repo = __webpack_require__(224);
 
 	var _Repo2 = _interopRequireDefault(_Repo);
 
-	var _User = __webpack_require__(228);
+	var _User = __webpack_require__(229);
 
 	var _User2 = _interopRequireDefault(_User);
 
@@ -24428,18 +24428,6 @@
 
 	var _reactRouter = __webpack_require__(161);
 
-	var _SearchRepos = __webpack_require__(224);
-
-	var _SearchRepos2 = _interopRequireDefault(_SearchRepos);
-
-	var _Repo = __webpack_require__(226);
-
-	var _Repo2 = _interopRequireDefault(_Repo);
-
-	var _Repo3 = __webpack_require__(227);
-
-	var _Repo4 = _interopRequireDefault(_Repo3);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26096,6 +26084,95 @@
 /* 224 */
 /***/ function(module, exports, __webpack_require__) {
 
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(161);
+
+	var _SearchRepos = __webpack_require__(225);
+
+	var _SearchRepos2 = _interopRequireDefault(_SearchRepos);
+
+	var _RepoResults = __webpack_require__(227);
+
+	var _RepoResults2 = _interopRequireDefault(_RepoResults);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Repo = (function (_React$Component) {
+	    _inherits(Repo, _React$Component);
+
+	    function Repo() {
+	        _classCallCheck(this, Repo);
+
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Repo).apply(this, arguments));
+	    }
+
+	    _createClass(Repo, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    'Back'
+	                ),
+	                _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'Find Repos'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-group' },
+	                    _react2.default.createElement('input', { type: 'text', className: 'form-control search', placeholder: 'Name of repo' }),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'input-group-btn' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'btn btn-success', onClick: this.handleClick },
+	                            'Find'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(_RepoResults2.default, null)
+	            );
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick(arg) {
+	            var val = window.document.querySelector('.search').value;
+	            _SearchRepos2.default.get(val);
+	        }
+	    }]);
+
+	    return Repo;
+	})(_react2.default.Component);
+
+	exports.default = Repo;
+
+/***/ },
+/* 225 */
+/***/ function(module, exports, __webpack_require__) {
+
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -26129,7 +26206,7 @@
 	                    this.actions.dataFound(data);
 	                }).bind(this),
 	                error: (function (xhr, status, err) {
-	                    console.error(this.props.url, status, err.toString());
+	                    console.error('error getting repos');
 	                }).bind(this)
 	            });
 	        }
@@ -26145,10 +26222,10 @@
 
 	exports.default = SearchRepos;
 	exports.default = _alt2.default.createActions(SearchRepos);
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(225)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(226)))
 
 /***/ },
-/* 225 */
+/* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -35364,7 +35441,155 @@
 
 
 /***/ },
-/* 226 */
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _Repo = __webpack_require__(228);
+
+	var _Repo2 = _interopRequireDefault(_Repo);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var RepoResults = (function (_React$Component) {
+	    _inherits(RepoResults, _React$Component);
+
+	    function RepoResults(props) {
+	        _classCallCheck(this, RepoResults);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(RepoResults).call(this, props));
+
+	        _this.state = {
+	            repo: {
+	                items: [],
+	                total_count: undefined
+	            }
+	        };
+	        return _this;
+	    }
+
+	    _createClass(RepoResults, [{
+	        key: 'render',
+	        value: function render() {
+	            // All repos
+	            var repos = this.state.repo.items.map(function (repo, id) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    { key: id, style: {
+	                            minHeight: '120px',
+	                            borderBottom: '1px solid #ddd',
+	                            padding: '10px 0'
+	                        } },
+	                    _react2.default.createElement('img', { style: {
+	                            width: '100px',
+	                            height: '100px',
+	                            float: 'left',
+	                            marginRight: '10px'
+	                        }, src: repo.owner.avatar_url }),
+	                    _react2.default.createElement(
+	                        'h4',
+	                        { style: {
+	                                marginTop: '0'
+	                            } },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: repo.html_url, target: '_blank' },
+	                            repo.name
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'h5',
+	                        null,
+	                        'Created by: ',
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: repo.owner.html_url, target: '_blank' },
+	                            repo.owner.login
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        'p',
+	                        { style: {
+	                                fontWeight: '200'
+	                            } },
+	                        repo.description
+	                    )
+	                );
+	            });
+
+	            // Container of repos
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h4',
+	                    { style: {
+	                            textAlign: 'center',
+	                            margin: '20px 0'
+	                        } },
+	                    this.state.repo.total_count ? this.state.repo.total_count + ' results' : ''
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'results', style: {
+	                            padding: '0',
+	                            listStyle: 'none'
+	                        } },
+	                    repos
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            _Repo2.default.listen(this.onChange.bind(this));
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            _Repo2.default.unlisten(this.onChange.bind(this));
+	        }
+	    }, {
+	        key: 'onChange',
+	        value: function onChange() {
+	            this.setState(_Repo2.default.getState());
+	        }
+	    }], [{
+	        key: 'getStores',
+	        value: function getStores() {
+	            return [_Repo2.default];
+	        }
+	    }, {
+	        key: 'getPropsFromStores',
+	        value: function getPropsFromStores() {
+	            return _Repo2.default.getState();
+	        }
+	    }]);
+
+	    return RepoResults;
+	})(_react2.default.Component);
+
+	exports.default = RepoResults;
+
+/***/ },
+/* 228 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35379,7 +35604,7 @@
 
 	var _alt2 = _interopRequireDefault(_alt);
 
-	var _SearchRepos = __webpack_require__(224);
+	var _SearchRepos = __webpack_require__(225);
 
 	var _SearchRepos2 = _interopRequireDefault(_SearchRepos);
 
@@ -35411,7 +35636,7 @@
 	exports.default = _alt2.default.createStore(Repo);
 
 /***/ },
-/* 227 */
+/* 229 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -35422,179 +35647,19 @@
 	    value: true
 	});
 
-	var _alt = __webpack_require__(211);
-
-	var _alt2 = _interopRequireDefault(_alt);
-
 	var _react = __webpack_require__(2);
 
 	var _react2 = _interopRequireDefault(_react);
 
 	var _reactRouter = __webpack_require__(161);
 
-	var _SearchRepos = __webpack_require__(224);
+	var _SearchUsers = __webpack_require__(230);
 
-	var _SearchRepos2 = _interopRequireDefault(_SearchRepos);
+	var _SearchUsers2 = _interopRequireDefault(_SearchUsers);
 
-	var _Repo = __webpack_require__(226);
+	var _UserResults = __webpack_require__(231);
 
-	var _Repo2 = _interopRequireDefault(_Repo);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var Repo = (function (_React$Component) {
-	    _inherits(Repo, _React$Component);
-
-	    function Repo(props) {
-	        _classCallCheck(this, Repo);
-
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Repo).call(this, props));
-
-	        _this.state = {
-	            repo: {
-	                items: [],
-	                total_count: undefined
-	            }
-	        };
-	        return _this;
-	    }
-
-	    _createClass(Repo, [{
-	        key: 'render',
-	        value: function render() {
-	            /*
-	                @teresamorais can you add some style or data? :)
-	                you can see all data with this line:
-	                    console.log( this.state.repo )
-	                 try and see!
-	            */
-
-	            // All repos
-	            var repos = this.state.repo.items.map(function (repo) {
-	                return _react2.default.createElement(
-	                    'li',
-	                    null,
-	                    _react2.default.createElement(
-	                        'h3',
-	                        null,
-	                        ' Repo name '
-	                    ),
-	                    _react2.default.createElement(
-	                        'h4',
-	                        null,
-	                        repo.name
-	                    ),
-	                    _react2.default.createElement(
-	                        'h4',
-	                        null,
-	                        'Created by'
-	                    ),
-	                    _react2.default.createElement('img', { style: {
-	                            width: '100px',
-	                            heigth: '100px'
-	                        }, src: repo.owner.avatar_url })
-	                );
-	            });
-
-	            // Container of repos
-	            return _react2.default.createElement(
-	                'div',
-	                null,
-	                _react2.default.createElement(
-	                    'h4',
-	                    null,
-	                    'Found ',
-	                    this.state.repo.total_count,
-	                    ' Repos'
-	                ),
-	                _react2.default.createElement('input', { className: 'search', placeholder: 'Name of repo' }),
-	                _react2.default.createElement(
-	                    'button',
-	                    { className: 'btn btn-success', onClick: this.handleClick },
-	                    'Find repos'
-	                ),
-	                _react2.default.createElement(
-	                    _reactRouter.Link,
-	                    { to: '/' },
-	                    'Back'
-	                ),
-	                _react2.default.createElement(
-	                    'ul',
-	                    { className: 'results' },
-	                    repos
-	                )
-	            );
-	        }
-	    }, {
-	        key: 'shouldComponentUpdate',
-	        value: function shouldComponentUpdate(nextProps, nextState) {
-	            return true;
-	        }
-	    }, {
-	        key: 'componentWillMount',
-	        value: function componentWillMount() {
-	            _Repo2.default.listen(this.onChange.bind(this));
-	        }
-	    }, {
-	        key: 'componentWillUnmount',
-	        value: function componentWillUnmount() {
-	            _Repo2.default.unlisten(this.onChange.bind(this));
-	        }
-	    }, {
-	        key: 'onChange',
-	        value: function onChange() {
-	            this.setState(_Repo2.default.getState());
-	        }
-	    }, {
-	        key: 'handleClick',
-	        value: function handleClick(arg) {
-	            var val = window.document.querySelector('.search').value;
-	            _SearchRepos2.default.get(val);
-	        }
-	    }], [{
-	        key: 'getStores',
-	        value: function getStores() {
-	            return [_Repo2.default];
-	        }
-	    }, {
-	        key: 'getPropsFromStores',
-	        value: function getPropsFromStores() {
-	            return _Repo2.default.getState();
-	        }
-	    }]);
-
-	    return Repo;
-	})(_react2.default.Component);
-
-	exports.default = Repo;
-
-/***/ },
-/* 228 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _alt = __webpack_require__(211);
-
-	var _alt2 = _interopRequireDefault(_alt);
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _reactRouter = __webpack_require__(161);
+	var _UserResults2 = _interopRequireDefault(_UserResults);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35607,10 +35672,10 @@
 	var User = (function (_React$Component) {
 	    _inherits(User, _React$Component);
 
-	    function User(props) {
+	    function User() {
 	        _classCallCheck(this, User);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(User).call(this, props));
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(User).apply(this, arguments));
 	    }
 
 	    _createClass(User, [{
@@ -35620,17 +35685,37 @@
 	                'div',
 	                null,
 	                _react2.default.createElement(
-	                    'span',
-	                    null,
-	                    'toDo'
-	                ),
-	                _react2.default.createElement('br', null),
-	                _react2.default.createElement(
 	                    _reactRouter.Link,
 	                    { to: '/' },
 	                    'Back'
-	                )
+	                ),
+	                _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'Find Users'
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'input-group' },
+	                    _react2.default.createElement('input', { type: 'text', className: 'form-control search', placeholder: 'Name of user' }),
+	                    _react2.default.createElement(
+	                        'span',
+	                        { className: 'input-group-btn' },
+	                        _react2.default.createElement(
+	                            'button',
+	                            { className: 'btn btn-success', onClick: this.handleClick },
+	                            'Find'
+	                        )
+	                    )
+	                ),
+	                _react2.default.createElement(_UserResults2.default, null)
 	            );
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick(arg) {
+	            var val = window.document.querySelector('.search').value;
+	            _SearchUsers2.default.get(val);
 	        }
 	    }]);
 
@@ -35638,6 +35723,229 @@
 	})(_react2.default.Component);
 
 	exports.default = User;
+
+/***/ },
+/* 230 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _alt = __webpack_require__(211);
+
+	var _alt2 = _interopRequireDefault(_alt);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var SearchUsers = (function () {
+	    function SearchUsers() {
+	        _classCallCheck(this, SearchUsers);
+	    }
+
+	    _createClass(SearchUsers, [{
+	        key: 'get',
+	        value: function get(val) {
+	            $.ajax({
+	                url: 'https://api.github.com/search/users',
+	                dataType: 'json',
+	                data: 'q=' + val,
+	                cache: false,
+	                success: (function (data) {
+	                    this.actions.dataFound(data);
+	                }).bind(this),
+	                error: (function (xhr, status, err) {
+	                    console.error('error getting users');
+	                }).bind(this)
+	            });
+	        }
+	    }, {
+	        key: 'dataFound',
+	        value: function dataFound(data) {
+	            this.dispatch(data);
+	        }
+	    }]);
+
+	    return SearchUsers;
+	})();
+
+	exports.default = SearchUsers;
+	exports.default = _alt2.default.createActions(SearchUsers);
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(226)))
+
+/***/ },
+/* 231 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _User = __webpack_require__(232);
+
+	var _User2 = _interopRequireDefault(_User);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var UserResults = (function (_React$Component) {
+	    _inherits(UserResults, _React$Component);
+
+	    function UserResults(props) {
+	        _classCallCheck(this, UserResults);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(UserResults).call(this, props));
+
+	        _this.state = {
+	            user: {
+	                items: [],
+	                total_count: undefined
+	            }
+	        };
+	        return _this;
+	    }
+
+	    _createClass(UserResults, [{
+	        key: 'render',
+	        value: function render() {
+	            // All users
+	            var users = this.state.user.items.map(function (user, id) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    { key: id, style: {
+	                            minHeight: '120px',
+	                            borderBottom: '1px solid #ddd',
+	                            padding: '10px 0'
+	                        } },
+	                    _react2.default.createElement('img', { style: {
+	                            width: '100px',
+	                            height: '100px',
+	                            float: 'left',
+	                            marginRight: '10px'
+	                        }, src: user.avatar_url }),
+	                    _react2.default.createElement(
+	                        'h4',
+	                        { style: {
+	                                marginTop: '0'
+	                            } },
+	                        _react2.default.createElement(
+	                            'a',
+	                            { href: user.html_url, target: '_blank' },
+	                            user.login
+	                        )
+	                    )
+	                );
+	            });
+
+	            // Container of users
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h4',
+	                    { style: {
+	                            textAlign: 'center',
+	                            margin: '20px 0'
+	                        } },
+	                    this.state.user.total_count ? this.state.user.total_count + ' results' : ''
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'results', style: {
+	                            padding: '0',
+	                            listStyle: 'none'
+	                        } },
+	                    users
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            _User2.default.listen(this.onChange.bind(this));
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            _User2.default.unlisten(this.onChange.bind(this));
+	        }
+	    }, {
+	        key: 'onChange',
+	        value: function onChange() {
+	            this.setState(_User2.default.getState());
+	        }
+	    }]);
+
+	    return UserResults;
+	})(_react2.default.Component);
+
+	exports.default = UserResults;
+
+/***/ },
+/* 232 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _alt = __webpack_require__(211);
+
+	var _alt2 = _interopRequireDefault(_alt);
+
+	var _SearchUsers = __webpack_require__(230);
+
+	var _SearchUsers2 = _interopRequireDefault(_SearchUsers);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var User = (function () {
+	    function User() {
+	        _classCallCheck(this, User);
+
+	        this.bindAction(_SearchUsers2.default.dataFound, this.onUsers);
+
+	        this.state = {
+	            user: []
+	        };
+	    }
+
+	    _createClass(User, [{
+	        key: 'onUsers',
+	        value: function onUsers(obj) {
+	            this.setState({ user: obj });
+	        }
+	    }]);
+
+	    return User;
+	})();
+
+	exports.default = _alt2.default.createStore(User);
 
 /***/ }
 /******/ ]);

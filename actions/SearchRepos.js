@@ -15,7 +15,7 @@ export default class SearchRepos {
                 this.actions.dataFound(data);
             }.bind(this),
             error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
+                console.error( 'error getting repos' );
             }.bind(this)
         });
     }
