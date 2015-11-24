@@ -24415,7 +24415,7 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _alt = __webpack_require__(211);
@@ -24449,40 +24449,40 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Home = (function (_React$Component) {
-	  _inherits(Home, _React$Component);
+	    _inherits(Home, _React$Component);
 
-	  function Home(props) {
-	    _classCallCheck(this, Home);
+	    function Home(props) {
+	        _classCallCheck(this, Home);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Home).call(this, props));
-	  }
-
-	  _createClass(Home, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: 'repo' },
-	          ' Find repos '
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: 'user' },
-	          ' Find users '
-	        )
-	      );
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Home).call(this, props));
 	    }
-	  }, {
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(nextProps, nextState) {
-	      return false;
-	    }
-	  }]);
 
-	  return Home;
+	    _createClass(Home, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: 'repo' },
+	                    ' Find repos '
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: 'user' },
+	                    ' Find users '
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'shouldComponentUpdate',
+	        value: function shouldComponentUpdate(nextProps, nextState) {
+	            return false;
+	        }
+	    }]);
+
+	    return Home;
 	})(_react2.default.Component);
 
 	exports.default = Home;
@@ -26101,7 +26101,7 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _alt = __webpack_require__(211);
@@ -26113,34 +26113,34 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var SearchRepos = (function () {
-	  function SearchRepos() {
-	    _classCallCheck(this, SearchRepos);
-	  }
-
-	  _createClass(SearchRepos, [{
-	    key: 'get',
-	    value: function get(val) {
-	      $.ajax({
-	        url: 'https://api.github.com/search/repositories',
-	        dataType: 'json',
-	        data: 'q=' + val,
-	        cache: false,
-	        success: (function (data) {
-	          this.actions.dataFound(data);
-	        }).bind(this),
-	        error: (function (xhr, status, err) {
-	          console.error(this.props.url, status, err.toString());
-	        }).bind(this)
-	      });
+	    function SearchRepos() {
+	        _classCallCheck(this, SearchRepos);
 	    }
-	  }, {
-	    key: 'dataFound',
-	    value: function dataFound(data) {
-	      this.dispatch(data);
-	    }
-	  }]);
 
-	  return SearchRepos;
+	    _createClass(SearchRepos, [{
+	        key: 'get',
+	        value: function get(val) {
+	            $.ajax({
+	                url: 'https://api.github.com/search/repositories',
+	                dataType: 'json',
+	                data: 'q=' + val,
+	                cache: false,
+	                success: (function (data) {
+	                    this.actions.dataFound(data);
+	                }).bind(this),
+	                error: (function (xhr, status, err) {
+	                    console.error(this.props.url, status, err.toString());
+	                }).bind(this)
+	            });
+	        }
+	    }, {
+	        key: 'dataFound',
+	        value: function dataFound(data) {
+	            this.dispatch(data);
+	        }
+	    }]);
+
+	    return SearchRepos;
 	})();
 
 	exports.default = SearchRepos;
@@ -35372,7 +35372,7 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _alt = __webpack_require__(211);
@@ -35388,24 +35388,24 @@
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Repo = (function () {
-	  function Repo() {
-	    _classCallCheck(this, Repo);
+	    function Repo() {
+	        _classCallCheck(this, Repo);
 
-	    this.bindAction(_SearchRepos2.default.dataFound, this.onRepos);
+	        this.bindAction(_SearchRepos2.default.dataFound, this.onRepos);
 
-	    this.state = {
-	      repo: []
-	    };
-	  }
-
-	  _createClass(Repo, [{
-	    key: 'onRepos',
-	    value: function onRepos(obj) {
-	      this.setState({ repo: obj });
+	        this.state = {
+	            repo: []
+	        };
 	    }
-	  }]);
 
-	  return Repo;
+	    _createClass(Repo, [{
+	        key: 'onRepos',
+	        value: function onRepos(obj) {
+	            this.setState({ repo: obj });
+	        }
+	    }]);
+
+	    return Repo;
 	})();
 
 	exports.default = _alt2.default.createStore(Repo);
@@ -35419,7 +35419,7 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _alt = __webpack_require__(211);
@@ -35449,127 +35449,127 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var Repo = (function (_React$Component) {
-	  _inherits(Repo, _React$Component);
+	    _inherits(Repo, _React$Component);
 
-	  function Repo(props) {
-	    _classCallCheck(this, Repo);
+	    function Repo(props) {
+	        _classCallCheck(this, Repo);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Repo).call(this, props));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Repo).call(this, props));
 
-	    _this.state = {
-	      repo: {
-	        items: [],
-	        total_count: undefined
-	      }
-	    };
-	    return _this;
-	  }
+	        _this.state = {
+	            repo: {
+	                items: [],
+	                total_count: undefined
+	            }
+	        };
+	        return _this;
+	    }
 
-	  _createClass(Repo, [{
-	    key: 'render',
-	    value: function render() {
-	      /*
-	          @teresamorais can you add some style or data? :)
-	          you can see all data with this line:
-	              console.log( this.state.repo )
-	           try and see!
-	      */
+	    _createClass(Repo, [{
+	        key: 'render',
+	        value: function render() {
+	            /*
+	                @teresamorais can you add some style or data? :)
+	                you can see all data with this line:
+	                    console.log( this.state.repo )
+	                 try and see!
+	            */
 
-	      // All repos
-	      var repos = this.state.repo.items.map(function (repo) {
-	        return _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            'h3',
-	            null,
-	            ' Repo name '
-	          ),
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            repo.name
-	          ),
-	          _react2.default.createElement(
-	            'h4',
-	            null,
-	            'Created by '
-	          ),
-	          _react2.default.createElement('img', { style: {
-	              width: '100px',
-	              heigth: '100px'
-	            }, src: repo.owner.avatar_url })
-	        );
-	      });
+	            // All repos
+	            var repos = this.state.repo.items.map(function (repo) {
+	                return _react2.default.createElement(
+	                    'li',
+	                    null,
+	                    _react2.default.createElement(
+	                        'h3',
+	                        null,
+	                        ' Repo name '
+	                    ),
+	                    _react2.default.createElement(
+	                        'h4',
+	                        null,
+	                        repo.name
+	                    ),
+	                    _react2.default.createElement(
+	                        'h4',
+	                        null,
+	                        'Created by'
+	                    ),
+	                    _react2.default.createElement('img', { style: {
+	                            width: '100px',
+	                            heigth: '100px'
+	                        }, src: repo.owner.avatar_url })
+	                );
+	            });
 
-	      // Container of repos
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'h4',
-	          null,
-	          'Found ',
-	          this.state.repo.total_count,
-	          ' Repos'
-	        ),
-	        _react2.default.createElement('input', { className: 'search', placeholder: 'Name of repo' }),
-	        _react2.default.createElement(
-	          'button',
-	          { className: 'btn btn-success', onClick: this.handleClick },
-	          'Find repos'
-	        ),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/' },
-	          'Back'
-	        ),
-	        _react2.default.createElement(
-	          'ul',
-	          { className: 'results' },
-	          repos
-	        )
-	      );
-	    }
-	  }, {
-	    key: 'shouldComponentUpdate',
-	    value: function shouldComponentUpdate(nextProps, nextState) {
-	      return true;
-	    }
-	  }, {
-	    key: 'componentWillMount',
-	    value: function componentWillMount() {
-	      _Repo2.default.listen(this.onChange.bind(this));
-	    }
-	  }, {
-	    key: 'componentWillUnmount',
-	    value: function componentWillUnmount() {
-	      _Repo2.default.unlisten(this.onChange.bind(this));
-	    }
-	  }, {
-	    key: 'onChange',
-	    value: function onChange() {
-	      this.setState(_Repo2.default.getState());
-	    }
-	  }, {
-	    key: 'handleClick',
-	    value: function handleClick(arg) {
-	      var val = window.document.querySelector('.search').value;
-	      _SearchRepos2.default.get(val);
-	    }
-	  }], [{
-	    key: 'getStores',
-	    value: function getStores() {
-	      return [_Repo2.default];
-	    }
-	  }, {
-	    key: 'getPropsFromStores',
-	    value: function getPropsFromStores() {
-	      return _Repo2.default.getState();
-	    }
-	  }]);
+	            // Container of repos
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'h4',
+	                    null,
+	                    'Found ',
+	                    this.state.repo.total_count,
+	                    ' Repos'
+	                ),
+	                _react2.default.createElement('input', { className: 'search', placeholder: 'Name of repo' }),
+	                _react2.default.createElement(
+	                    'button',
+	                    { className: 'btn btn-success', onClick: this.handleClick },
+	                    'Find repos'
+	                ),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    'Back'
+	                ),
+	                _react2.default.createElement(
+	                    'ul',
+	                    { className: 'results' },
+	                    repos
+	                )
+	            );
+	        }
+	    }, {
+	        key: 'shouldComponentUpdate',
+	        value: function shouldComponentUpdate(nextProps, nextState) {
+	            return true;
+	        }
+	    }, {
+	        key: 'componentWillMount',
+	        value: function componentWillMount() {
+	            _Repo2.default.listen(this.onChange.bind(this));
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            _Repo2.default.unlisten(this.onChange.bind(this));
+	        }
+	    }, {
+	        key: 'onChange',
+	        value: function onChange() {
+	            this.setState(_Repo2.default.getState());
+	        }
+	    }, {
+	        key: 'handleClick',
+	        value: function handleClick(arg) {
+	            var val = window.document.querySelector('.search').value;
+	            _SearchRepos2.default.get(val);
+	        }
+	    }], [{
+	        key: 'getStores',
+	        value: function getStores() {
+	            return [_Repo2.default];
+	        }
+	    }, {
+	        key: 'getPropsFromStores',
+	        value: function getPropsFromStores() {
+	            return _Repo2.default.getState();
+	        }
+	    }]);
 
-	  return Repo;
+	    return Repo;
 	})(_react2.default.Component);
 
 	exports.default = Repo;
@@ -35583,7 +35583,7 @@
 	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _alt = __webpack_require__(211);
@@ -35605,36 +35605,36 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var User = (function (_React$Component) {
-	  _inherits(User, _React$Component);
+	    _inherits(User, _React$Component);
 
-	  function User(props) {
-	    _classCallCheck(this, User);
+	    function User(props) {
+	        _classCallCheck(this, User);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(User).call(this, props));
-	  }
-
-	  _createClass(User, [{
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(
-	          'span',
-	          null,
-	          'toDo'
-	        ),
-	        _react2.default.createElement('br', null),
-	        _react2.default.createElement(
-	          _reactRouter.Link,
-	          { to: '/' },
-	          'Back'
-	        )
-	      );
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(User).call(this, props));
 	    }
-	  }]);
 
-	  return User;
+	    _createClass(User, [{
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'span',
+	                    null,
+	                    'toDo'
+	                ),
+	                _react2.default.createElement('br', null),
+	                _react2.default.createElement(
+	                    _reactRouter.Link,
+	                    { to: '/' },
+	                    'Back'
+	                )
+	            );
+	        }
+	    }]);
+
+	    return User;
 	})(_react2.default.Component);
 
 	exports.default = User;

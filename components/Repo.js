@@ -25,24 +25,19 @@ export default class Repo extends React.Component {
     }
 
     render() {
-        /*
-            @teresamorais can you add some style or data? :)
-            you can see all data with this line:
-                console.log( this.state.repo )
-
-            try and see!
-        */
 
         // All repos
         var repos = this.state.repo.items.map( function( repo ) {
             return (
-                <li>
-                    <h3> Repo name </h3>
-                    <h4>{repo.name}</h4>
-                    <h4>Created by</h4> 
+                <li style={{
+                    borderBottom: '1px solid #ddd',
+                    paddingBottom: '10px'
+                }}>
+                    <h5>Repo name: {repo.name}</h5>
+                    <h6>Created by:</h6> 
                     <img style={{
                         width: '100px',
-                        heigth: '100px'
+                        height: '100px'
                     }} src={repo.owner.avatar_url}></img>
                 </li>
             )
@@ -51,13 +46,23 @@ export default class Repo extends React.Component {
         // Container of repos
         return (
             <div>
-                <h4>Found {this.state.repo.total_count } Repos</h4>
-                <input className="search" placeholder="Name of repo"></input>
-                <button className="btn btn-success" onClick={this.handleClick}>Find repos</button>
                 <Link to='/'>Back</Link>
-                 <ul className="results">
-                     {repos}
-                 </ul>
+                <h4>Find Repos</h4>
+                <div className="input-group">
+                    <input type="text" className="form-control search" placeholder="Name of repo" />
+                    <span className="input-group-btn">
+                        <button className="btn btn-success" onClick={this.handleClick}>Find</button>
+                    </span>
+                </div>
+                <div>
+                    <h4>{ this.state.repo.total_count ? this.state.repo.total_count + ' results': '' }</h4>
+                    <ul className="results" style={{
+                        padding: '0',
+                        listStyle: 'none',
+                    }}>
+                        {repos}
+                    </ul>
+                </div>
             </div>
         )
     }
