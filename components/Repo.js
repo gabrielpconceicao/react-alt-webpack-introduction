@@ -25,7 +25,6 @@ export default class Repo extends React.Component {
     }
 
     render() {
-
         // All repos
         var repos = this.state.repo.items.map( function( repo, id ) {
             return (
@@ -38,7 +37,7 @@ export default class Repo extends React.Component {
                     <img style={{
                         width: '100px',
                         height: '100px'
-                    }} src={repo.owner.avatar_url}></img>
+                    }} src={repo.owner.avatar_url} />
                 </li>
             )
         })
