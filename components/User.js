@@ -1,6 +1,8 @@
 import alt from '../plugins/alt'
 import React, { Component } from 'react'
 import { Router, Route, Link } from 'react-router'
+import SearchUsersActions from '../actions/SearchUsers'
+import UserStore from '../stores/User'
 
 export default class User extends React.Component {
     constructor(props) {
@@ -22,7 +24,7 @@ export default class User extends React.Component {
                     borderBottom: '1px solid #ddd',
                     paddingBottom: '10px'
                 }}>
-                    <a href="{user.html_url}" target="_blank">{user.login}</a>
+                    <a href={user.html_url} target="_blank">{user.login}</a>
                     <img style={{
                         width: '100px',
                         height: '100px'
@@ -55,6 +57,24 @@ export default class User extends React.Component {
         )
     }
 
-    handleClick(  ) {
+    shouldComponentUpdate ( nextProps, nextState ) {
+        return true
+    }
+
+    componentWillMount() {
+        UserStore.listen(this.onChange.bind( this ) )
+    }
+
+    componentWillUnmount() {
+        UserStore.unlisten(this.onChange.bind( this ) )
+    }
+
+    onChange() {
+        this.setState( UserStore.getState() )
+    }
+
+    handleClick( arg ) {
+        var val = window.document.querySelector( '.search' ).value
+        SearchUsersActions.get( val )
     }
 }
