@@ -27,9 +27,9 @@ export default class Repo extends React.Component {
     render() {
 
         // All repos
-        var repos = this.state.repo.items.map( function( repo ) {
+        var repos = this.state.repo.items.map( function( repo, id ) {
             return (
-                <li style={{
+                <li key={id} style={{
                     borderBottom: '1px solid #ddd',
                     paddingBottom: '10px'
                 }}>
